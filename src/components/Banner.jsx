@@ -6,9 +6,15 @@ import classes from "../styles/Banner.module.css";
 //import image
 import imgBanner from "../assets/fenrir.svg";
 import btn from "../assets/btn.png";
+import audi from "../assets/dog.mp3";
 
 
 function Banner() {
+  const audio = new Audio(audi);
+
+  const play = () => {
+    audio.play();
+  };
   return (
     <>
       <div className="container mx-auto">
@@ -34,6 +40,7 @@ function Banner() {
           <div className="md:col-span-2 md:row-span-4 lg:row-span-2 row-span-4 order-first lg:order-last">
             <div className="lg:relative lg:w-[671px] lg:h-[671px]">
               <img
+              onClick={play}
                 className="hover:translate-y-3 active:-translate-y-2 inset-0 object-cover"
                 src={imgBanner}
                 alt=""
